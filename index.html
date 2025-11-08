@@ -1,151 +1,205 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tacos el Tartan</title>
+
+  <!-- Estilos mínimos (internos) para que sea responsive -->
+  <style>
+    :root{--rojo:#6B0504;--dorado:#A69658}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:#000;
+      color:#fff;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.5;
+      display:flex; flex-direction:column;  /* para empujar el footer al fondo */
+    }
+    a{color:var(--rojo); text-decoration:none}
+    img,video{max-width:100%; height:auto; display:block}
+
+    /* Barra superior */
+    .topbar{
+      width:100%;
+      background:var(--dorado);
+      padding:10px 12px;
+      text-align:center;
+    }
+    .topbar a{font-weight:600; margin:0 10px}
+
+    /* Contenedor principal */
+    main{width:100%; max-width:1100px; margin:0 auto; padding:20px; flex:1}
+
+    /* Logo centrado */
+    .logo{display:flex; justify-content:center; margin:18px 0}
+    .logo img{width:500px; max-width:80vw}
+
+    /* Sección “Sobre nosotros” con dos imágenes a los lados */
+    .about{
+      display:flex; gap:18px; align-items:center; justify-content:center;
+      flex-wrap:wrap;
+    }
+    .about .col{flex:1 1 310px}
+    .about .texto{padding:8px 4px}
+    .about h2{text-align:center; margin:0 0 8px}
+
+    /* Galería de 3 videos */
+    .videos{
+      margin-top:8px;
+      display:grid; gap:16px;
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    /* Collage de fotos (reemplaza la tabla) */
+    .collage{
+      margin:24px 0;
+      display:grid; gap:10px;
+      grid-template-columns:2fr 1fr;
+      grid-auto-rows:200px;
+    }
+    .collage .span2x{grid-column:span 2}
+    .collage .tall{grid-row:span 2}
+    .collage figure{margin:0; overflow:hidden; border:1px solid #333}
+    .collage img{width:100%; height:100%; object-fit:cover}
+
+    /* Servicios */
+    .servicios{max-width:700px; margin:10px auto 0; text-align:center}
+    .servicios ul{list-style:none; padding:0; margin:10px 0 0}
+    .servicios li{padding:6px 0; border-bottom:1px solid #222}
+
+    /* Links bajo servicios */
+    .links{margin:18px 0; text-align:center}
+    .links a{color:#fff; margin:0 10px}
+
+    /* Mapa responsive */
+    .map-wrap{position:relative; padding-top:56.25%; max-width:900px; margin:0 auto 24px}
+    .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+    /* Footer */
+    footer{background:#222; text-align:center; padding:16px 10px; color:#fff}
+
+    /* Responsive: tablet y móvil */
+    @media (max-width:900px){
+      .videos{grid-template-columns:repeat(2,1fr)}
+      .collage{grid-template-columns:1fr 1fr; grid-auto-rows:170px}
+    }
+    @media (max-width:600px){
+      .videos{grid-template-columns:1fr}
+      .collage{grid-template-columns:1fr; grid-auto-rows:170px}
+      .topbar a{display:inline-block; margin:6px 8px}
+    }
+  </style>
 </head>
-<body bgcolor="black">
+<body>
 
- 
+  <!-- NAV / BARRA SUPERIOR -->
+  <nav class="topbar">
+    <a href="index.html">Inicio</a>
+    <span style="opacity:.5">|</span>
+    <a href="Menu.html">Menú</a>
+    <span style="opacity:.5">|</span>
+    <a href="https://wa.me/7297715231?text=Hola%2C%20quiero%20ordenar" target="_blank" rel="noopener">Ordena Ya!!!</a>
+  </nav>
 
- 
-  <table width="100%" bgcolor=#A69658 cellspacing="0" cellpadding="12">
-    <tr>
-      <td align="center">
-        <a href="index.html" style="color: #6B0504">Inicio</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="Menu.html"style="color: #6B0504">Menú</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://wa.me/7297715231?text=Hola, quiero ordenar" style="color:#6B0504">Ordena Ya!!!</a>
-      </td>
-    </tr>
-  </table>
-  
-  <center>
-    <img src="img/logo.jpg" width="500">
-</center>
-
-<table width="100%" cellspacing="20">
-    <tr>
-
-       
-        <td align="center" width="33%">
-            <img src="img/fre.jpg" width="600">
-        </td>
-
-       
-        <td align="center" width="33%">
-            <div style="color:white; font-size:18px; line-height:1.6; text-align:justify;">
-                <h2 style="color:white; text-align:center;">Sobre Nosotros</h2>
-
-                Taquería “El Tartán” es un negocio local dedicado a ofrecer auténticos tacos al pastor
-                preparados al estilo tradicional, con ingredientes frescos y un trompo que mantiene el
-                sabor clásico de la región. Nuestro ambiente es familiar, cómodo e ideal para disfrutar
-                de un antojito.<br><br>
-
-                Nos especializamos en tacos bien servidos, carne jugosa y salsas caseras que realzan cada
-                bocado. También contamos con tortas, gringas y dobladitas, manteniendo siempre la calidad,
-                el buen servicio y el sabor que nos distingue.
-            </div>
-        </td>
-
-      
-        <td align="center" width="33%">
-            <img src="img/cora.jpg" width="500">
-        </td>
-
-    </tr>
-</table>
-<h2 style="text-align:center; color:#fff; margin-bottom:12px;">Galería</h2>
-<table width="100%" cellspacing="20">
-    <tr>
-
-       
-        <td align="center" width="33%">
-            <video width="350" controls>
-                <source src="vid/lug.mp4" type="video/mp4">
-            </video>
-        </td>
-
-       
-        <td align="center" width="33%">
-            <video width="550" controls>
-                <source src="vid/den.mp4" type="video/mp4">
-            </video>
-        </td>
-
-       
-        <td align="center" width="33%">
-            <video width="350" controls>
-                <source src="vid/tro.mp4" type="video/mp4">
-            </video>
-        </td>
-
-    </tr>
-</table>
-<div align=center>
-<br>
-<table border="1">
-  <tr>
-  
-	<td colspan="2" > <img src="img/team.jpg" height="400" width="900" alt="Logo CUA"></td>
-	<td colspan="1" rowspan="2" > <img src="img/grac.jpg" height="900" width="400" alt="Logo CUA"></td>
-  </tr>
-  <tr>
-    <td colspan="1" rowspan="2"> <img src="img/tro.jpg" height="900" width="500" alt="Logo CUA"></td>
-    <td> <img src=" img/mike.jpg" height="500" width="400" alt="Logo CUA"></td>
-    
-  </tr>
-  <tr>
-   
-	<td colspan="1" > <img src=" img/ros.jpg" height="400" width="400" alt="Logo CUA"></td>
-	<td colspan="1" > <img src=" img/fre.jpg" height="400" width="400" alt="Logo CUA"></td>
-  </tr>
-</table>
- 
-</div>
-
-
-<center>
-    <div style="color:white; width:60%; font-size:18px; line-height:1.6; margin-top:30px;">
-        <h2 style="color:white; margin-bottom:10px;">Servicios del Establecimiento</h2>
-        <ul style="list-style:none; padding:0;">
-            <li>• Estacionamiento</li>
-            <li>• Area de niños</li>
-            <li>• Baños para clientes</li>
-            <li>• Pedidos para llevar</li>
-			<li>• Pedidos a domicilio y pick up</li>
-            <li>• Área de espera cómoda</li>
-            <li>• Higiene y limpieza constante</li>
-            <li>• Ambiente familiar</li>
-        </ul>
+  <main>
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Logo Tacos el Tartán">
     </div>
-</center>
-<hr color="white" width="80%" size="3">
 
-<center>
-   <a href="https://www.facebook.com/share/1Bw9TahZ5i/" target="_blank" style="color:white;">Facebook</a>
-    &nbsp;|&nbsp;
-     &nbsp;|&nbsp;
-    <a href="eventos.html" style="color:white">Cotiza Eventos</a>
-    &nbsp;|&nbsp;
-    <a href="quejas.html" style="color:white">Quejas y sugerencias</a>
-    &nbsp;|&nbsp;
-    
-    
-</center>
+    <!-- SOBRE NOSOTROS -->
+    <section class="about" aria-labelledby="sobre">
+      <div class="col">
+        <img src="img/fre.jpg" alt="Trompo al pastor">
+      </div>
 
-<br>
+      <div class="col texto">
+        <h2 id="sobre">Sobre Nosotros</h2>
+        <p>
+          Taquería “El Tartán” es un negocio local dedicado a ofrecer auténticos tacos al pastor
+          preparados al estilo tradicional, con ingredientes frescos y un trompo que mantiene el
+          sabor clásico de la región. Nuestro ambiente es familiar, cómodo e ideal para disfrutar
+          de un antojito.
+        </p>
+        <p>
+          Nos especializamos en tacos bien servidos, carne jugosa y salsas caseras que realzan cada
+          bocado. También contamos con tortas, gringas y dobladitas, manteniendo siempre la calidad,
+          el buen servicio y el sabor que nos distingue.
+        </p>
+      </div>
 
-<center>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.5706061753494!2d-98.6553146!3d20.2766355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d10f30e04bfb1f%3A0x3fb6347f56fd514c!2sTacos%20%22El%20Tartan%22!5e0!3m2!1ses-419!2smx!4v1762556121555!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</center>
+      <div class="col">
+        <img src="img/cora.jpg" alt="Tacos servidos">
+      </div>
+    </section>
 
+    <!-- GALERÍA DE VIDEOS -->
+    <h2 style="text-align:center; margin:24px 0 10px">Galería</h2>
+    <section class="videos" aria-label="Videos del lugar">
+      <video controls preload="metadata">
+        <source src="vid/lug.mp4" type="video/mp4">
+      </video>
+      <video controls preload="metadata">
+        <source src="vid/den.mp4" type="video/mp4">
+      </video>
+      <video controls preload="metadata">
+        <source src="vid/tro.mp4" type="video/mp4">
+      </video>
+    </section>
 
+    <!-- COLLAGE (fotos) -->
+    <section class="collage" aria-label="Collage fotográfico">
+      <figure class="span2x"><img src="img/team.jpg" alt="Equipo de Tacos el Tartán"></figure>
+      <figure class="tall"><img src="img/grac.jpg" alt="Cliente feliz con sus tacos"></figure>
+      <figure class="tall"><img src="img/tro.jpg" alt="Trompo al pastor en acción"></figure>
+      <figure><img src="img/mike.jpg" alt="Preparación en parrilla"></figure>
+      <figure><img src="img/ros.jpg" alt="Orden de tacos al pastor"></figure>
+      <figure><img src="img/fre.jpg" alt="Salsa y complementos"></figure>
+    </section>
 
-<footer style="background-color:#222; color:white; text-align:center;">
+    <!-- SERVICIOS -->
+    <section class="servicios" aria-labelledby="servicios">
+      <h2 id="servicios">Servicios del Establecimiento</h2>
+      <ul>
+        <li>Estacionamiento</li>
+        <li>Área de niños</li>
+        <li>Baños para clientes</li>
+        <li>Pedidos para llevar</li>
+        <li>Pedidos a domicilio y pick up</li>
+        <li>Área de espera cómoda</li>
+        <li>Higiene y limpieza constante</li>
+        <li>Ambiente familiar</li>
+      </ul>
+    </section>
+
+    <!-- LINKS -->
+    <div class="links">
+      <a href="https://www.facebook.com/share/1Bw9TahZ5i/" target="_blank" rel="noopener">Facebook</a>
+      <span style="opacity:.5">|</span>
+      <a href="eventos.html">Cotiza Eventos</a>
+      <span style="opacity:.5">|</span>
+      <a href="quejas.html">Quejas y Sugerencias</a>
+    </div>
+
+    <!-- MAPA -->
+    <div class="map-wrap" aria-label="Ubicación en Google Maps">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.5706061753494!2d-98.6553146!3d20.2766355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d10f30e04bfb1f%3A0x3fb6347f56fd514c!2sTacos%20%22El%20Tartan%22!5e0!3m2!1ses-419!2smx!4v1762556121555!5m2!1ses-419!2smx"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
     <p>Alejandro Muñoz</p>
     <p>Contacto: urial4588@gmail.com</p>
     <p>&copy; 2025 Alejandro Muñoz. Todos los derechos reservados.</p>
-</footer>
+  </footer>
 </body>
-
-
 </html>
+
+
